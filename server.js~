@@ -1,4 +1,4 @@
-window.server="https://sgsq.pythonanywhere.com"
+window.server="http://localhost:5000"
 window.ghuser="sgsq"
 window.pubfilerepo="file"
 window.postsrepo="posts"
