@@ -1,0 +1,137 @@
+<div class="alert alert-warning">
+                  <h5><i class="icon fas fa-exclamation-triangle"></i>注意</h5>
+                  这是公共区域，在这里上传的图片是公开的。
+                </div>
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">选择图片</h3>
+        </div>
+        <div class="card-body">
+          <form>
+<div class="form-group">
+                    <label for="exampleInputFile">输入</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" accept="image/*" id="exampleInputFile" onchange="handleimageupload(this.files[0])">
+                        <label class="custom-file-label" for="exampleInputFile">选择文件</label>
+                      </div>
+                    </div>
+                  </div>
+<div class="form-group">
+                        <label>文件名</label>
+                        <input type="text" class="form-control" id="fn" placeholder="Enter ..." onkeyup="clearupimagename()" onblur="clearupimagename()">
+                      </div>
+<p>文件名只允许大写字母，小写字母，数字</p>
+          </form>
+<div id="prev"></div>
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          在这个对话框中选择图片，然后前往下一步
+        </div>
+        <!-- /.card-footer-->
+      </div>
+      <!-- /.card -->
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">图片信息</h3>
+        </div>
+        <div class="card-body" id="imginfo">
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          这个对话框显示图片详细信息
+        </div>
+        <!-- /.card-footer-->
+      </div>
+      <!-- /.card -->
+      <!-- Default box -->
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">图片处理器</h3>
+        </div>
+        <div class="card-body" id="imgprocess">
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          这个对话框负责处理图像（所以看起来是空的）
+        </div>
+        <!-- /.card-footer-->
+      </div>
+      <!-- /.card -->
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">处理后图片</h3>
+        </div>
+        <div class="card-body" id="imgprocessed">
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+这里放处理后图片
+        </div>
+        <!-- /.card-footer-->
+      </div>
+      <!-- /.card -->
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">替代文本</h3>
+        </div>
+        <div class="card-body">
+<div>
+<p>alt 属性是一个必需的属性，它规定在图像无法显示时的替代文本。</p>
+<p>假设由于下列原因用户无法查看图像，alt 属性可以为图像提供替代的信息：</p>
+
+<ul>
+<li>网速太慢</li>
+<li>src 属性中的错误</li>
+<li>浏览器禁用图像</li>
+<li>用户使用的是屏幕阅读器</li>
+</ul>
+
+<p>&lt;img&gt; 标签的 alt 属性指定了替代文本，用于在图像无法显示或者用户禁用图像显示时，代替图像显示在浏览器中的内容。</p>
+<p>我们强烈推荐您在文档的每个图像中都使用这个属性。这样即使图像无法显示，用户还是可以看到关于丢失了什么东西的一些信息。而且对于残疾人来说，alt 属性通常是他们了解图像内容的唯一方式。</p>
+</div>
+<div class="form-group">
+                        <label>输入文本</label>
+                        <input type="text" class="form-control" id="ialt" onblur="clearupimagealt()" onkeyup="clearupimagealt()" placeholder="Enter ...">
+                      </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+请填写alt，至少5个字,不能使用标点。
+        </div>
+        <!-- /.card-footer-->
+      </div>
+      <!-- /.card -->
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">上传</h3>
+        </div>
+        <div class="card-body">
+文件名:<span id="upimgname"></span> <br />
+文件大小:<span id="upimgsize"></span><br />
+图像尺寸:<span id="upimgwh"></span><br />
+alt文本:<span id="alttext"></span><br /><button type="button" class="btn btn-block btn-primary btn-lg "onclick='checkupimg()'>更新信息</button>
+<button type="button" id="upimgb" class="btn btn-block btn-primary btn-lg" disabled="true" onclick="sendupimg()">提交</button>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+请检查信息是否正确
+        </div>
+        <!-- /.card-footer-->
+      </div>
+      <!-- /.card -->
+
+<script src="imgupload.js"></script>
+<script src="filesize.js"></script>

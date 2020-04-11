@@ -1,0 +1,65 @@
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">完善信息</h3>
+        </div>
+        <div class="card-body">
+<form id="usrdetail">
+<div class="form-group">
+                    <label for="cname">姓名</label>
+                    <input type="text" name="cname" minlength="2" maxlength="4" required class="form-control" id="cname" placeholder="2-4个中文汉字">
+                  </div>
+<div class="form-group">
+                    <label for="birth">出生年月日</label>
+                    <input type="text" name="birth" minlength="8" maxlength="8" required digits="true" class="form-control" id="birth" placeholder="8位数字">
+                  </div>
+<div class="form-group">
+                    <label for="grade">入学年份</label>
+                    <input type="text" name="grade" minlength="4" maxlength="4" required digits="true" class="form-control" id="grade" placeholder="4位数字，以校园卡为准">
+                  </div>
+<div class="form-group">
+                    <label for="classid">班级</label>
+                    <input type="text" name="classid" minlength="1" maxlength="2" required digits="true" max="15" min="1" class="form-control" id="classid" placeholder="最多2位数字">
+                  </div>
+<div class="form-group">
+                    <label for="intro">自我介绍</label>
+                    <textarea id=intro name="intro" minlength="1" maxlength="200" required class="form-control" rows="3" placeholder="200字以内"></textarea>
+                  </div>
+<div class="form-group">
+                    <label for="phone">手机号</label>
+                    <input type="text" name="phone" digits="true" required class="form-control" id="phone" placeholder="数字">
+                  </div>
+<div class="form-group">
+                    <label for="parentphone">家长手机号</label>
+                    <input type="text" name="parentphone" digits="true" required class="form-control" id="parentphone" placeholder="数字">
+                  </div>
+<div class="form-group">
+                    <label for="qq">QQ</label>
+                    <input type="text" name="qq" min="10000" digits="true" required class="form-control" id="qq" placeholder="数字">
+                  </div>
+<div class="form-group">
+                    <label for="wx">微信 绑定的手机/wxid</label>
+                    <input type="text" name="wx" required class="form-control" id="wx" placeholder="文本">
+                  </div>
+<div class="form-group">
+                    <label for="joinat">入社时间 年月</label>
+                    <input type="text" name="joinat" minlength="6" maxlength="6" required digits="true" class="form-control" id="joinat" placeholder="6位数字">
+                  </div>
+<div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required class="form-control" id="email" placeholder="name@example.com">
+                  </div>
+                    <br /><button class="btn btn-primary">提交</button></form>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          所有项目均为必填
+        </div>
+        <!-- /.card-footer-->
+      </div>
+      <!-- /.card -->
+
+<script src="plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="plugins/jquery-validation/localization/messages_zh.min.js"></script>
+<script src=usrdetail.js></script>
