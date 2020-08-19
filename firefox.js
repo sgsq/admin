@@ -1,3 +1,3 @@
-if(!navigator.userAgent.includes("Firefox")){
-window.location.href="https://firefox.com"; 
+if(!navigator.userAgent.includes("Firefox") && !navigator.userAgent.includes("iPhone") ){
+window.location.href="https://firefox.com";
 }

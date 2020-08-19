@@ -1,0 +1,134 @@
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">随机密码生成器</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body">
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+   <table class="table">
+    <tbody><tr>
+    <td width="10%">密码长度：</td>
+    <td>
+    <select id="pgLength">
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    </select>
+    </td>
+    </tr>
+    <tr>
+    <td>小写字母(a..z)</td>
+    <td><input type="checkbox" id="chkl" name="chku" checked="checked" class="span4"></td>
+    </tr>
+    <tr>
+    <td>大写字母(A..Z)</td>
+    <td><input type="checkbox" id="chku" name="chku" checked="checked" class="span4"></td>
+    </tr>
+    <tr>
+    <td>数字(0..9)</td>
+    <td><input type="checkbox" id="chkn" name="chku" checked="checked" class="span4"></td>
+    </tr>
+    <tr>
+    <td>特殊字符</td>
+    <td><input type="checkbox" id="chksc" name="chku" checked="checked" class="span4"></td>
+</tr><tr>
+    <td><button type="button" class="btn btn-success" onclick="generatePassword();"><i class="fa fa-paper-plane"></i> 生成密码</button></td>
+    <td><span id="output" style="font-size: 24px;font-weight: bold;"></span></td>
+    </tr>
+</tbody></table>
+
+  </div>
+
+</form>
+
+
+<!-- end -->
+
+
+
+					 </div>
+					</div>
+      </div>
+    </div>
+  </div>
+</div>
+	<div class="col-md-12">
+		<div id="about" class="panel panel-default">
+			<div class="panel-heading">概述</div>
+			<div class="panel-body">
+			随机密码生成器可以实现在线生成随机密码、随机数，通过设置小写字母(a..z)、大写字母(A..Z)	、数字(0..9)、特殊字符等来随机生成 6 到 30 位的密码。			</div>
+        </div>
+	</div>
+</div>
+<script>
+function generatePassword(){
+   var length = $("#pgLength").val();
+     var string = "abcdefghijklmnopqrstuvwxyz";
+     var strUpper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+     var numeric = '0123456789';
+     var punctuation = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+     var password = "";
+     while( password.length<length ) {
+         entity1 = Math.ceil(string.length * Math.random()*Math.random()) - 1;
+         entity2 = Math.ceil(numeric.length * Math.random()*Math.random()) - 1;
+         entity3 = Math.ceil(punctuation.length * Math.random()*Math.random()) - 1;
+         entity4 = Math.ceil(strUpper.length * Math.random()*Math.random()) - 1;
+         if($("#chkl").is(":checked") && password.length<length){
+           password += string.charAt( entity1 );
+         }
+         if($("#chku").is(":checked") && password.length<length){
+           password += strUpper.charAt( entity4 );
+         }
+         if($("#chkn").is(":checked") && password.length<length ){
+           password += numeric.charAt( entity2 );
+         }
+         if($("#chksc").is(":checked") && password.length<length){
+           password += punctuation.charAt( entity3 );
+         }
+     }
+
+    $("#output").html("生成的密码是：<b>"+password+"</b>");
+}
+
+</script>
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          所有运算均在浏览器端进行。请放心使用。
+        </div>
+        <!-- /.card-footer-->
+      </div>
+      <!-- /.card -->
+

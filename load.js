@@ -2,7 +2,7 @@ switchpage();
 function load(title,filename){
 $("#pagename").html(title);
 $.ajax({
-url:filename,
+url:filename+".html",
 success:function(data,status){
 checkloginstatus();
 if (status=200){
@@ -63,7 +63,13 @@ switch(window.location.hash) {
      case "#manage":
         load("社长","manage");
         break;
+     case "#qr":
+        load("二维码 ","qr");
+        break;
+     case "#rnd":
+        load("随机数","rnd");
+        break;
      default:
         console.log(window.location.hash)
-} 
+}
 }

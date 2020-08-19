@@ -13,7 +13,7 @@ return false
 
 function sendfiletop(){
 if (checkfilesizeforupload()){
-document.write("Please Wait");
+$("#uftpb").attr("disabled",true);
 var formData = new FormData()
 formData.append('usrid', window.usrid);
 formData.append('token', window.token);

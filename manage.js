@@ -94,7 +94,7 @@ window.server+"/manage/newkey",
 {usrid:window.usrid,
 token:window.token,
 },
-function(data,status){$("#cld").text("https://sgsq.github.io/admin/register?"+data)}
+function(data,status){$("#cld").text("https://sgsq.pythonanywhere.com/f/register.html?"+data)}
 )
 
 }
@@ -109,7 +109,7 @@ function(data,status){
 s=""
 o=JSON.parse(data)
 for(x in o){
-s+="<br/>https://sgsq.github.io/admin/register?"
+s+="<br/>https://sgsq.pythonanywhere.com/f/register.html?"
 s+=o[x][0]+"<br/>"
 s+=new Date(o[x][1]*1000)+"<br/>"
 }
